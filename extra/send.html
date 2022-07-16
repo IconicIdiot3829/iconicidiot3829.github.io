@@ -1,0 +1,33 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link rel="icon" type="image/x-icon" href="images/icon/favicon.jpg">
+<style>
+#desktop {
+  position: absolute;
+  min-height: 100%; min-width: 100%;
+  z-index: 0;
+  top:0%; right:0%; 
+  bottom:0%; left:0%;
+  padding: 20px;
+  background-color: #000;
+  color:  #fff;
+  font-family: 'Poppins';
+  text-align: center;
+}
+</style>
+<title>Why?</title>
+<div id="desktop" onclick="fml();"><p>Click anywhere to send:</p><p>"Daddy better make me choke"</p><p>in IconicIdiot3829's Discord!</p><p>Please avoid spamming, or the feature may be removed.</p></div>
+  <script>
+    function fml() {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/997681011519410177/TfEbiaRFSDyw5Voc_C_Ukm-ldSxIJJxRZBj5o5Fa_Hj7Ycu-pK1e11ggtgxMuyehXqSg");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "CupcakKe",
+        content: "Daddy better make me choke :zany_face:"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
