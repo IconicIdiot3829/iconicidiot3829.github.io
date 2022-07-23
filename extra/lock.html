@@ -1,0 +1,69 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link rel="icon" type="image/x-icon" href="images/icon/favicon.jpg">
+<script src="battery/script.js"> </script>
+<style>
+#desktop {
+  position: absolute;
+  min-height: 100%; min-width: 100%;
+  z-index: 0;
+  top:0%; right:0%; 
+  bottom:0%; left:0%;
+  padding: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 12px;
+  display: none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 12px;
+  display: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+  display: none;
+}
+body {
+  overflow: hidden;
+  font-family: 'Poppins';
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  user-select: none;
+  background: #2a2a2a;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+      }
+}
+#locknews {
+  position: absolute;
+  border-radius: 8px;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  width: 90%;
+}
+</style>
+<div id="desktop">
+<p style="font-size: 30px;">Hello!</p>
+<p style="font-size: 18px;">Here is some info for you!</p>
+<iframe id="locknews" src="https://www.meteoblue.com/en/weather/maps/widget?windAnimation=0&windAnimation=1&gust=0&gust=1&satellite=0&satellite=1&cloudsAndPrecipitation=0&cloudsAndPrecipitation=1&temperature=0&temperature=1&sunshine=0&sunshine=1&extremeForecastIndex=0&extremeForecastIndex=1&geoloc=detect&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=5&autowidth=auto" frameborder="0" scrolling="NO"></iframe><div></div>
+</div>
