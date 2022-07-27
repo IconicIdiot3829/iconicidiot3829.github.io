@@ -1,0 +1,336 @@
+<style>
+#p1box {
+  border-radius: 10px;
+  width: 295px;
+  height: 295px;
+  color: #fff;
+  background: #1a1a1a;
+  padding: 8px;
+}
+#p2box {
+  border-radius: 10px;
+  width: 295px;
+  height: 295px;
+  color: #fff;
+  background: #1a1a1a;
+  padding: 8px;
+  display: none;
+}
+.box {
+  position: absolute;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  width: 95px; 
+  height: 95px;
+  transition: 0.25;
+}
+.box:hover {
+  background-color: #3a3a3a;
+}
+.box:active {
+  background-color: #4a4a4a;
+}
+.box1 {
+  margin-left: 100px;
+}
+.box2 {
+  margin-left: 200px;
+}
+.boxtop {
+  margin-top: 100px;
+}
+.boxtop2 {
+  margin-top: 200px;
+}
+.appicon {
+  border-radius: 5px;
+  width: 95px;
+  height: 95px;
+  background:rgb(0,0,0,0);
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+</style>
+<body onload="reset();">
+<body>
+<div id="p1box">
+<div class="box"><img id="1p1" onclick="document.getElementById('1p1').src='p1.png';document.getElementById('1p2').src='p1.png';p2();" src="empty.png" class="appicon"></img></div>
+<div class="box box1"><img id="2p1" onclick="document.getElementById('2p1').src='p1.png';document.getElementById('2p2').src='p1.png';p2();" src="empty.png" class="appicon"></img></div>
+<div class="box box2"><img id="3p1" onclick="document.getElementById('3p1').src='p1.png';document.getElementById('3p2').src='p1.png';p2();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop"><img id="4p1" onclick="document.getElementById('4p1').src='p1.png';document.getElementById('4p2').src='p1.png';p2();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop box1"><img id="5p1" onclick="document.getElementById('5p1').src='p1.png';document.getElementById('5p2').src='p1.png';p2();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop box2"><img id="6p1" onclick="document.getElementById('6p1').src='p1.png';document.getElementById('6p2').src='p1.png';p2();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop2"><img id="7p1" onclick="document.getElementById('7p1').src='p1.png';document.getElementById('7p2').src='p1.png';p2();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop2 box1"><img id="8p1" onclick="document.getElementById('8p1').src='p1.png';document.getElementById('8p2').src='p1.png';p2();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop2 box2"><img id="9p1" onclick="document.getElementById('9p1').src='p1.png';document.getElementById('9p2').src='p1.png';p2();" src="empty.png" class="appicon"></img></div>
+</div>
+<div id="p2box">
+<div class="box"><img id="1p2" onclick="document.getElementById('1p1').src='p2.png';document.getElementById('1p2').src='p2.png';p1();" src="empty.png" class="appicon"></img></div>
+<div class="box box1"><img id="2p2" onclick="document.getElementById('2p1').src='p2.png';document.getElementById('2p2').src='p2.png';p1();" src="empty.png" class="appicon"></img></div>
+<div class="box box2"><img id="3p2" onclick="document.getElementById('3p1').src='p2.png';document.getElementById('3p2').src='p2.png';p1();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop"><img id="4p2" onclick="document.getElementById('4p1').src='p2.png';document.getElementById('4p2').src='p2.png';p1();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop box1"><img id="5p2" onclick="document.getElementById('5p1').src='p2.png';document.getElementById('5p2').src='p2.png';p1();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop box2"><img id="6p2" onclick="document.getElementById('6p1').src='p2.png';document.getElementById('6p2').src='p2.png';p1();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop2"><img id="7p2" onclick="document.getElementById('7p1').src='p2.png';document.getElementById('7p2').src='p2.png';p1();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop2 box1"><img id="8p2" onclick="document.getElementById('8p1').src='p2.png';document.getElementById('8p2').src='p2.png';p1();" src="empty.png" class="appicon"></img></div>
+<div class="box boxtop2 box2"><img id="9p2" onclick="document.getElementById('9p1').src='p2.png';document.getElementById('9p2').src='p2.png';p1();" src="empty.png" class="appicon"></img></div>
+</div>
+<p id="selectbox">Player 1, please select a spot to take</p>
+<p id="hasanyonewon">No one has won, yet...</p>
+<script>
+function p2() {
+  var x = document.getElementById("p1box");
+  x.style.display = "none";
+  var x = document.getElementById("p2box");
+  x.style.display = "block";
+  document.getElementById("selectbox").innerHTML = "Player 2, please select a spot to take.";
+}
+function p1() {
+  var x = document.getElementById("p2box");
+  x.style.display = "none";
+  var x = document.getElementById("p1box");
+  x.style.display = "block";
+  document.getElementById("selectbox").innerHTML = "Player 1, please select a spot to take.";
+}
+function won() {
+  var x = document.getElementById("p2box");
+  x.style.display = "none";
+  var x = document.getElementById("p1box");
+  x.style.display = "none";
+  var x = document.getElementById("selectbox");
+  x.style.display = "none";
+}
+function reset() {
+  document.getElementById('1p1').src='empty.png'
+  document.getElementById('2p2').src='empty.png'
+  document.getElementById('3p2').src='empty.png'
+  document.getElementById('4p2').src='empty.png'
+  document.getElementById('5p2').src='empty.png'
+  document.getElementById('6p2').src='empty.png'
+  document.getElementById('7p2').src='empty.png'
+  document.getElementById('8p2').src='empty.png'
+  document.getElementById('9p2').src='empty.png'
+  document.getElementById('1p1').src='empty.png'
+  document.getElementById('2p1').src='empty.png'
+  document.getElementById('3p1').src='empty.png'
+  document.getElementById('4p1').src='empty.png'
+  document.getElementById('5p1').src='empty.png'
+  document.getElementById('6p1').src='empty.png'
+  document.getElementById('7p1').src='empty.png'
+  document.getElementById('8p1').src='empty.png'
+  document.getElementById('9p1').src='empty.png'
+}
+const but1p1 = document.getElementById('1p1');
+const but2p1 = document.getElementById('2p1');
+const but3p1 = document.getElementById('3p1');
+but1p1.addEventListener('click', function handleClick() {
+  but2p1.addEventListener('click', function handleClick() {
+    but3p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+const but4p1 = document.getElementById('4p1');
+const but5p1 = document.getElementById('5p1');
+const but6p1 = document.getElementById('6p1');
+but4p1.addEventListener('click', function handleClick() {
+  but5p1.addEventListener('click', function handleClick() {
+    but6p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+const but7p1 = document.getElementById('7p1');
+const but8p1 = document.getElementById('8p1');
+const but9p1 = document.getElementById('9p1');
+but7p1.addEventListener('click', function handleClick() {
+  but8p1.addEventListener('click', function handleClick() {
+    but9p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+but1p1.addEventListener('click', function handleClick() {
+  but4p1.addEventListener('click', function handleClick() {
+    but7p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+but2p1.addEventListener('click', function handleClick() {
+  but5p1.addEventListener('click', function handleClick() {
+    but8p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+but3p1.addEventListener('click', function handleClick() {
+  but6p1.addEventListener('click', function handleClick() {
+    but9p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+but1p1.addEventListener('click', function handleClick() {
+  but5p1.addEventListener('click', function handleClick() {
+    but9p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+but3p1.addEventListener('click', function handleClick() {
+  but5p1.addEventListener('click', function handleClick() {
+    but7p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+but5p1.addEventListener('click', function handleClick() {
+  but7p1.addEventListener('click', function handleClick() {
+    but3p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+but7p1.addEventListener('click', function handleClick() {
+  but3p1.addEventListener('click', function handleClick() {
+    but5p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+but3p1.addEventListener('click', function handleClick() {
+  but7p1.addEventListener('click', function handleClick() {
+    but5p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+but1p1.addEventListener('click', function handleClick() {
+  but5p1.addEventListener('click', function handleClick() {
+    but9p1.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 1 Won! Wait, that rhymes!";
+      won();
+    });
+  });
+});
+const but1p2 = document.getElementById('1p2');
+const but2p2 = document.getElementById('2p2');
+const but3p2 = document.getElementById('3p2');
+but1p2.addEventListener('click', function handleClick() {
+  but2p2.addEventListener('click', function handleClick() {
+    but3p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+const but4p2 = document.getElementById('4p2');
+const but5p2 = document.getElementById('5p2');
+const but6p2 = document.getElementById('6p2');
+but4p2.addEventListener('click', function handleClick() {
+  but5p2.addEventListener('click', function handleClick() {
+    but6p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+const but7p2 = document.getElementById('7p2');
+const but8p2 = document.getElementById('8p2');
+const but9p2 = document.getElementById('9p2');
+but7p2.addEventListener('click', function handleClick() {
+  but8p2.addEventListener('click', function handleClick() {
+    but9p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+but1p2.addEventListener('click', function handleClick() {
+  but4p2.addEventListener('click', function handleClick() {
+    but7p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+but2p2.addEventListener('click', function handleClick() {
+  but5p2.addEventListener('click', function handleClick() {
+    but8p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+but3p2.addEventListener('click', function handleClick() {
+  but6p2.addEventListener('click', function handleClick() {
+    but9p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+but1p2.addEventListener('click', function handleClick() {
+  but5p2.addEventListener('click', function handleClick() {
+    but9p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+but3p2.addEventListener('click', function handleClick() {
+  but5p2.addEventListener('click', function handleClick() {
+    but7p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+but5p2.addEventListener('click', function handleClick() {
+  but7p2.addEventListener('click', function handleClick() {
+    but3p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+but7p2.addEventListener('click', function handleClick() {
+  but3p2.addEventListener('click', function handleClick() {
+    but5p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+but3p2.addEventListener('click', function handleClick() {
+  but7p2.addEventListener('click', function handleClick() {
+    but5p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+but1p2.addEventListener('click', function handleClick() {
+  but5p2.addEventListener('click', function handleClick() {
+    but9p2.addEventListener('click', function handleClick() {
+      document.getElementById("hasanyonewon").innerHTML = "Player 2 Won! Congrats for winning!";
+      won();
+    });
+  });
+});
+</script>
+</body>
